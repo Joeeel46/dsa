@@ -1,0 +1,508 @@
+A heap is a special tree-based data structure.It is commonly used on Priority Queues,Heap Sort, Graph Algorithm (like Dijkstra's shortest path)
+Insertion and deletion take O(log n) time.
+
+
+🌳 Spanning Tree
+A spanning tree is a subgraph that:
+Includes all vertices of the original graph.
+Has no cycles (it’s a tree).
+Has exactly V - 1 edges (where V is the number of vertices).
+Spanning trees are useful for:
+Network design: Minimum cost paths.
+Circuit design: Connecting components with minimum wiring.
+Data clustering: Grouping similar elements.
+
+
+
+The degree of a node is the number of edges connected to it:
+In-degree: Number of incoming edges (for directed graphs).
+Out-degree: Number of outgoing edges (for directed graphs).
+Example: If a node connects to 3 other nodes, its degree is 3.
+
+
+Minimum Spanning Tree (MST)
+A minimum spanning tree is a spanning tree with the smallest possible total edge weight.
+Popular algorithms to find an MST:
+1.Prim’s Algorithm: Greedy approach, similar to Dijkstra. O(E log V)
+2.Kruskal’s Algorithm: Sorts edges and connects components. O(E log E)
+MSTs are useful in network design, circuit layouts, and clustering algorithms.
+Used in:
+Network design: Connecting cities with the cheapest cables.
+Image segmentation: Clustering similar pixels.
+
+
+DFS (Depth-First Search) Complexity
+DFS explores as far as possible along one branch before backtracking.
+Time Complexity: O(V + E)
+Space Complexity: O(V) (for recursion stack)
+DFS is useful for:
+Cycle detection
+Topological sorting
+Finding connected components
+Example: Finding a path in a maze.
+
+
+BFS (Breadth-First Search) Complexity
+BFS explores all neighbors of a node before moving to the next level.
+Time Complexity: O(V + E)
+Space Complexity: O(V) (for queue)
+BFS is great for:
+Shortest path in an unweighted graph
+Level-order traversal in trees
+Example: Finding the shortest way out of a maze.
+
+
+Weighted vs Unweighted Graph
+Weighted Graph: Edges have values (weights). Example: road networks with distances.
+Unweighted Graph: Edges have no values, just connections. Example: social networks (friendships).
+Weights add complexity because algorithms must consider the cost of paths, not just the number of edges.
+
+
+Advantages of Recursion
+Recursion is when a function calls itself to solve smaller subproblems.
+Advantages:
+Simpler code: Recursive solutions are often shorter and more elegant (e.g., tree traversal).
+Divides problems naturally: Fits well for problems like factorial, Fibonacci, and backtracking.
+Stack memory management: Automatically handles state using the call stack.
+Drawback: Can cause stack overflow if not managed properly.
+
+
+The reactor pattern is a design pattern that handles multiple I/O operations (like reading files, handling network requests) using a single thread.
+It works by:
+Event demultiplexer: Listens for events (like a network request).
+Event queue: Puts events in a queue.
+Event handler: Processes events one by one.
+Used in: Node.js (that’s why it’s fast and non-blocking!). 🚀
+
+
+Tree Terminologies
+Root: Topmost node.
+Parent & Child: Nodes connected directly (parent → child).
+Leaf: Node with no children.
+Sibling: Nodes with the same parent.
+Height: Longest path from a node to a leaf.
+Depth: Distance from the root to a node.
+
+
+Advantages of Tries
+A Trie (pronounced "try") is a tree for storing words or strings.
+
+Advantages:
+
+Fast search: Can check if a word exists in O(L) time (L = length of word).
+Prefix matching: Easily find words with a given prefix (great for autocomplete!).
+Memory-efficient for shared prefixes: Avoids storing duplicate prefixes.
+Used in: Spell checkers, dictionary apps, and autocomplete features.
+
+
+A disconnected graph has at least two separate components — some vertices can’t reach others.
+A and B are connected, but disconnected from C and D.
+
+
+The depth of a node is its distance from the root.
+
+
+BT vs BST
+Binary Tree (BT): Any tree with at most 2 children per node.
+Binary Search Tree (BST): A sorted binary tree, where:
+Left child < Parent < Right child
+BSTs enable fast searching, insertion, and deletion.
+
+
+Tree: A special type of graph that is connected, acyclic (has no cycles), and has exactly 
+𝑉−1 edges for 𝑉 vertices. There is only one path between any two nodes.
+Example: Family tree, file directory structure.
+Graph: A collection of nodes (vertices) connected by edges, where connections can form cycles, and there can be multiple paths between nodes. Graphs can be directed or undirected, and connected or disconnected.
+Example: Social network, transportation system.
+
+Trees:
+Organize hierarchical data (file systems, organization charts).
+Efficient searching and sorting (Binary Search Tree, AVL tree).
+Parsing and evaluating expressions (Abstract Syntax Trees).
+Graphs:
+Model complex relationships (social networks, web pages).
+Solve shortest path problems (Google Maps, Dijkstra’s algorithm).
+Network flow and connectivity analysis (computer networks, electrical circuits).
+
+
+
+Max-Heap and Min-Heap Property
+A heap is a special tree-based data structure that satisfies the heap property:
+
+Max-Heap: The value of each node is greater than or equal to its children.
+Example: [100, 50, 30, 10, 20] → 100 is the largest element at the root.
+Min-Heap: The value of each node is less than or equal to its children.
+Example: [10, 20, 30, 40, 50] → 10 is the smallest element at the root.
+Use cases: Priority queues, Heap sort, Dijkstra’s algorithm.
+
+
+Heapify
+The process of rearranging a tree to maintain the heap property.
+Top-down heapify: Compare a node with its children and swap if necessary.
+Bottom-up heapify: Compare a node with its parent and swap if needed.
+Time Complexity: O(log n) (height of the tree).
+Example: Inserting an element into a heap and then heapifying restores the heap structure.
+
+
+Classification of Graphs
+Graphs can be classified as:
+Directed Graph (Digraph): Edges have directions (like a one-way street).
+Undirected Graph: Edges don’t have direction (like a two-way street).
+Weighted Graph: Edges have weights/costs (e.g., distances, costs).
+Unweighted Graph: Edges don’t have weights.
+Connected Graph: All vertices are reachable from any other vertex.
+Disconnected Graph: Some vertices can’t be reached.
+
+
+Shortest Path in a Graph
+Finding the smallest distance between two vertices.
+Unweighted Graph: Use BFS (O(V + E)).
+Weighted Graph: Use Dijkstra's Algorithm (O(V log V + E)).
+Example: In a road network, finding the shortest travel time.
+
+
+Cycle Detection in a Graph
+A cycle occurs when you can start at a vertex, follow a sequence of edges, and return to the same vertex.
+DFS with a visited stack can detect cycles (O(V + E)).
+Union-Find is useful for disjoint-set graphs.
+Example: Detecting circular dependencies in task scheduling.
+
+
+Self-Balancing Tree
+A binary tree that automatically keeps its height minimal after insertions and deletions.
+Examples:
+AVL Tree: Balances after every operation.
+Red-Black Tree: Balances using color properties.
+Why important? Balanced trees ensure search, insert, delete take O(log n).
+
+
+Complexity of Heap Sort
+Time Complexity: O(n log n) (both average and worst-case).
+Space Complexity: O(1) (in-place).
+Heap sort builds a heap and extracts elements one by one, heapifying after each extraction.
+
+
+
+Adjacency List vs Adjacency Matrix
+Adjacency List: Stores a list of neighbors for each vertex (O(V + E) space).
+Adjacency Matrix: Stores a 2D array with 1 (edge exists) or 0 (no edge) (O(V²) space).
+Example: Adjacency matrix is faster for dense graphs, while adjacency list is more memory-efficient for sparse graphs.
+
+
+Complexity of DFS in a Graph
+DFS explores all vertices and edges once:
+Time Complexity: O(V + E)
+Space Complexity: O(V) (for recursive stack or visited array).
+DFS is useful for cycle detection, topological sorting, and connected components.
+
+
+Time Complexity of Search in a Balanced Tree
+Best, Average, Worst: O(log n)
+Balanced trees (like AVL or Red-Black trees) keep their height as logarithmic, so search remains efficient.
+Example: Searching for an element in a phonebook.
+
+
+Shortest Path in an Unweighted Graph (BFS)
+BFS (Breadth-First Search) finds the shortest path in an unweighted graph.
+Time Complexity: O(V + E)
+Space Complexity: O(V) (for queue and visited array).
+Example: Finding the minimum number of jumps to reach a destination in a board game.
+
+
+
+Adjacency
+If two vertices share an edge, they are adjacent.
+Example: In a social network, if two people are friends, they are adjacent vertices.
+
+
+
+Red-Black Tree
+A self-balancing BST with the following properties:
+Nodes are colored red or black.
+The root is always black.
+Red nodes can't have red children.
+Every path from root to a leaf has the same number of black nodes.
+Operations take O(log n), making it a fast and balanced structure.
+
+
+
+Suffix Trie vs Prefix Trie
+Prefix Trie: Stores prefixes of words (good for autocomplete).
+Example: cat, car, can.
+Suffix Trie: Stores suffixes of words (good for pattern matching).
+Example: banana → a, na, ana, nana, anana, banana.
+
+
+Directed vs Undirected Graph
+Directed Graph: Edges have a direction (like one-way roads).
+Example: Twitter follows.
+Undirected Graph: Edges don’t have direction (like friendships).
+Example: Facebook friends.
+
+
+Internal Nodes
+Nodes that have at least one child in a tree.
+Example: In a tree:
+       A  
+      / \  
+     B   C  
+    /  
+   D  
+Internal nodes: A, B
+Leaf node (no children): D, C
+
+
+A graph where there is a path between every pair of vertices.
+Example:
+A — B — C  
+Here, all nodes are connected!
+If a graph is not connected, it’s called a disconnected graph.
+
+
+Bipartite Graph
+A graph whose vertices can be split into two sets so that no two vertices in the same set are adjacent.
+Example: In a team assignment problem, one set can represent players, and the other can represent teams.
+You can check if a graph is bipartite using DFS or BFS (O(V + E)).
+
+
+
+Binary Search
+An efficient algorithm to search for a target element in a sorted array. It works by:
+Dividing the array in half.
+Comparing the middle element to the target.
+Discarding half of the array based on the comparison.
+Time Complexity: O(log n)
+Example: Searching for 7 in [1, 3, 5, 7, 9].
+
+
+ Depth of a Node
+The distance from the root to the node.
+
+
+
+Ternary Tree
+A tree where each node can have up to 3 children (instead of 2 children like in a binary tree).
+Example:
+     A  
+   / | \  
+  B  C  D  
+
+
+Backtracking - DFS
+DFS (Depth-First Search) explores as far as possible along each branch before backtracking.
+Backtracking is used to undo choices and try another path.
+Example: Sudoku solver, Maze solving, N-Queens problem.
+Time Complexity: O(V + E)
+Space Complexity: O(V) (for stack space).
+
+
+
+Degree of a Vertex
+The number of edges connected to a vertex.
+In-degree (for directed graphs): Edges coming into the vertex.
+Out-degree (for directed graphs): Edges going out from the vertex.
+Example: In a graph:
+A — B — C  
+Degree of B: 2
+
+
+
+Applications of Weighted Graphs
+Used where edges have weights/costs.
+Examples:
+Maps & Navigation: Finding the shortest path (like Google Maps).
+Network Routing: Optimizing data transmission paths.
+Scheduling Problems: Finding the fastest/cheapest sequence of tasks.
+
+
+
+Trie Root Node
+The topmost node in a Trie (prefix tree).
+Doesn’t store any character itself.
+Holds references to child nodes.
+Example: Storing words like cat, car, cap:
+
+(root) — c — a — (t, r, p)  
+
+
+
+Complexity of Heap Sort
+Time Complexity: O(n log n) (for heapifying and extractions).
+Space Complexity: O(1) (in-place sorting).
+Heap sort uses a heap data structure to repeatedly extract the largest/smallest element.
+
+
+Complete Tree vs Full Tree
+Complete Tree: All levels are completely filled, except possibly the last level.
+Full Tree: All nodes have 0 or 2 children (no single-child nodes).'
+
+
+Graph Traversal Methods
+DFS (Depth-First Search): Explore as deep as possible, then backtrack (O(V + E)).
+BFS (Breadth-First Search): Explore neighbors first, level by level (O(V + E)).
+Example: DFS for pathfinding, BFS for shortest path in unweighted graphs.
+
+
+
+Segment Tree
+A tree data structure for range queries and updates (like finding the sum or minimum in a subarray).
+
+Time Complexity (build): O(n)
+Time Complexity (query/update): O(log n)
+Example: Finding the sum of elements from index 2 to 5 in an array.
+
+
+Applications of Heap
+A heap is a complete binary tree where:
+Max-Heap: Parent ≥ children.
+Min-Heap: Parent ≤ children.
+🔧 Common Applications:
+Priority Queue: For task scheduling, like in an operating system.
+Heap Sort: Efficient sorting algorithm (O(n log n)).
+Dijkstra’s Algorithm: Shortest path in a graph.
+Finding the k-largest/smallest elements: In O(n + k log n) time.
+Dynamic Median Maintenance: Finding the median in a dynamic array.
+
+
+Perfect Tree
+A tree where:
+All internal nodes have exactly 2 children.
+All leaf nodes are at the same level.
+      A  
+     / \  
+    B   C  
+   / \ / \  
+  D  E F  G  
+Height: log(n + 1)
+Nodes: 2^h - 1
+
+
+Compressed Trie
+An optimized version of a trie, where:
+Single-child chains are compressed into a single edge with multiple characters.
+Example: Inserting "car", "card", "cart" → turns into:
+(root) → car → {d, t}  
+🔧 Used in: IP routing, dictionary matching, autocomplete systems.
+
+
+Applications of BST (Binary Search Tree)
+A BST keeps elements in sorted order (O(log n) for search, insert, delete).
+🔧 Common Applications:
+Databases: For indexing and range queries.
+Autocompletion Systems: Storing words and quickly finding matches.
+Symbol Tables in Compilers: Storing variable names and values.
+File Systems: Organizing files and folders.
+
+
+
+Trie Serialization & Deserialization
+Serialization: Convert a Trie into a string or array (for storage or transmission).
+Deserialization: Rebuild the Trie from the stored data.
+Example:
+Serialization: ["c", "ca", "car", "cat"] → c-a-{r,t}
+Deserialization: Recreate the Trie with nodes and edges.
+🔧 Used in: Data storage, search engines, network routers.
+
+
+Graph vs Tree
+Aspect	              Graph	                                        Tree
+Definition	          Set of vertices connected by edges	          Connected acyclic graph
+Cycles?	              Can have cycles	                              No cycles
+Connectivity	        Can be connected or disconnected	            Always connected
+Direction     	      Can be directed or undirected	                Usually directed (root to leaf)
+Root Node?	          No root node	                                Has a root node
+Traversal Methods	    DFS, BFS, Dijkstra, Floyd-Warshall, etc.	    DFS, BFS, Inorder, Preorder, Postorder
+Example 	            Social network, road map	                    Family tree, file directory
+
+
+
+
+Types of Graphs
+Undirected Graph: Edges have no direction (A — B).
+Directed Graph (Digraph): Edges have a direction (A → B).
+Weighted Graph: Edges have weights/costs.
+Unweighted Graph: All edges are equal.
+Connected Graph: Every vertex is reachable.
+Disconnected Graph: Some vertices aren't reachable.
+Cyclic Graph: Contains at least one cycle.
+Acyclic Graph: No cycles (like a tree).
+Bipartite Graph: Vertices can be split into 2 sets.
+Complete Graph: Every vertex is connected to every other vertex.
+
+
+
+Minimum Spanning Tree (MST)
+A subset of edges that:
+Connects all vertices in a graph.
+Minimizes the total edge weight.
+Has no cycles (it’s a tree).
+🔧 Algorithms:
+Kruskal’s Algorithm: Sort edges by weight, pick the smallest non-cyclic edges.
+Prim’s Algorithm: Start from a vertex, greedily choose the smallest edge to an unvisited vertex.
+🔧 Applications:
+Network Design: Minimizing cabling costs.
+Image Segmentation: Clustering pixels based on distance.
+Transportation Planning: Building minimum-cost roads.
+Time Complexity: O(E log V) (with a priority queue).
+
+
+
+Graph
+A graph is a collection of nodes (vertices) connected by edges, which can be directed or undirected. It models relationships between entities.
+✅ Use Cases:
+Social networks, Google Maps, web crawling, recommendation systems.
+⏱️ Time Complexities:
+Add Vertex: O(1)
+Add Edge (Adjacency List): O(1)
+Add Edge (Adjacency Matrix): O(1)
+Remove Vertex: O(V + E)
+Remove Edge: O(1)
+DFS/BFS Traversal: O(V + E)
+
+
+
+Trie (Prefix Tree)
+A Trie is a tree-like structure where each node represents a character in a string, making it efficient for searching words or prefixes.
+✅ Use Cases:
+Auto-complete, spell-checking, IP routing, longest prefix matching.
+⏱️ Time Complexities:
+Insert a word: O(L) (L = length of the word)
+Search a word: O(L)
+Delete a word: O(L)
+
+
+
+Binary Search Tree (BST)
+A BST is a binary tree where left child < parent < right child, making searches and updates more efficient.
+✅ Use Cases:
+Database indexing, dynamic sets, searching for range queries.
+⏱️ Time Complexities:
+Search: O(h) (h = height of the tree)
+Insert: O(h)
+Delete: O(h)
+In a balanced BST, h = log(n).
+
+
+Heap (Priority Queue)
+A Heap is a special tree where the parent node is either greater than (max-heap) or smaller than (min-heap) its children, making it useful for priority-based tasks.
+✅ Use Cases:
+Dijkstra’s algorithm, task scheduling, median finding, heapsort.
+⏱️ Time Complexities:
+Insert: O(log n)
+Get Min/Max: O(1)
+Delete Min/Max: O(log n)
+Heapify: O(log n)
+Build Heap: O(n)
+
+
+
+Tree
+A tree is a hierarchical data structure consisting of nodes, where each node has a parent (except the root) and can have children. Trees have no cycles and only one path between two nodes.
+✅ Use Cases:
+File systems, organization charts, parsing expressions, decision trees, and routing algorithms.
+⏱️ Time Complexities:
+Search: O(n) (or O(log n) for balanced trees)
+Insert: O(n) (or O(log n) for balanced trees)
+Delete: O(n) (or O(log n) for balanced trees)
+DFS/BFS Traversal: O(n)
+Height Calculation: O(n)

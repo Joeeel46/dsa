@@ -1,0 +1,23 @@
+Valid Operations for a Stack (LIFO)
+
+Operation	Allowed?	Why?
+push(value)	✅ Yes	Adds an element to the top of the stack
+pop()	✅ Yes	Removes the top element
+peek()	✅ Yes	Returns the top element without removing it
+length	✅ Yes	Helps track the size of the stack
+slice(0, n)	✅ Yes	Can be used to view stack contents without modifying them
+splice()	❌ No	Modifies elements in the middle, breaking LIFO order
+shift()	❌ No	Removes from the front, which is not how a stack works
+unshift(value)	❌ No	Adds to the front, breaking the top-based structure
+
+
+Valid Operations for a Queue (FIFO)
+
+Operation	        Allowed?	                        Why?
+enqueue(value)      (Using push(value))✅ Yes	    Adds to the end of the queue
+dequeue()           (Using shift())	✅ Yes	        Removes from the front, following FIFO
+front()             (Using queue[0])   ✅ Yes	    Returns the first element without removing it
+length	            ✅ Yes	                        Helps track queue size
+splice(0, 1)	    ✅ Yes	                        Can be used as an alternative to shift() for dequeuing
+pop()	            ❌ No	                        Removes from the end, breaking FIFO order
+unshift(value)	    ❌ No	                        Adds to the front, breaking the back-based insertion rule

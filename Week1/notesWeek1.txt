@@ -1,0 +1,190 @@
+A data structure is a way of organizing and storing data so that it can be used efficiently. 
+They optimize how data is stored and accessed.
+They make searching, sorting, and processing faster.
+
+
+Space complexity is the amount of memory an algorithm needs to run based on the input size (n).
+
+Time complexity specifies how the execution time of an algorithm grows as the input size increases.
+
+O(1) (Constant Time): Takes the same time, no matter the input size (e.g., accessing an array element).
+O(n) (Linear Time): Time grows directly with input size (e.g., looping through an array).
+O(log n) (Logarithmic Time): Time grows slowly as input size increases (e.g., binary search).
+O(n²) (Quadratic Time): Time increases rapidly with input (e.g., nested loops).
+
+let jaggedArr = [
+  [1, 2, 3],
+  [4, 5],
+  [6, 7, 8, 9]
+];
+
+Parsing an array means converting data into an array format.
+
+Homogeneous Array: All elements are of the same type.
+Heterogeneous Array: Elements can be of different types
+
+Virtual memory is a section of the hard drive that acts as extra RAM when physical RAM is full.
+Helps run large programs smoothly.
+Slower than real RAM but prevents system crashes.
+
+ Advantages of Array Over Linked List
+Feature	        Array	                    Linked List
+Access	        Faster (O(1))	            Slower (O(n))
+Memory	        Less overhead	            More memory (stores pointers)
+Insert/Delete	  Slow (shifting needed)	  Fast (just update pointers)
+
+Disadvantages of Arrays Over Linked Lists
+
+Aspect	                        Array 🟦	                                              Linked List 🔗
+
+Size                            Flexibility	Fixed size (needs resizing) ❌	             Dynamic size (grows/shrinks as needed) ✅
+Insertion & Deletion	          Costly (O(n) due to shifting) ❌	                       Efficient (O(1) if reference is known) ✅
+Memory                          Usage	May waste space if extra slots exist ❌	         Uses only required memory but extra space for pointers ❌
+Resizing                        Cost	Expensive (copying elements) ❌	                 No resizing needed ✅
+
+Use arrays when you need fast access.
+Use linked lists when you need frequent insertions/deletions.
+
+static Memory Allocation: Memory is fixed at compile-time (e.g., arrays in C).
+Dynamic Memory Allocation: Memory is allocated at runtime (e.g., using malloc in C, new in JS).
+JavaScript always uses dynamic memory allocation.
+
+
+Recursion is a process where a function calls itself to solve a problem by breaking it into smaller subproblems
+Tail Recursion: The recursive call is the last operation in the function.
+Head Recursion: The recursive call happens before any other operation
+Tail recursion is more memory-efficient because it doesn’t need to keep track of previous function calls.
+
+Direct Recursion: A function calls itself directly.
+Indirect Recursion: Two or more functions call each other in a loop.
+
+function funcA(n) {
+    if (n <= 0) return;
+    console.log("A:", n);
+    funcB(n - 1); // Calls funcB
+}
+
+function funcB(n) {
+    if (n <= 0) return;
+    console.log("B:", n);
+    funcA(n - 2); // Calls funcA
+}
+
+funcA(5);
+
+Asymptotic Notations
+Asymptotic notations describe how an algorithm's performance changes with input size.
+Big-O (O) → Worst-case time complexity.
+Omega (Ω) → Best-case time complexity.
+Theta (Θ) → Average-case time complexity.
+
+A memory pool is a block of pre-allocated memory used to store objects. It helps reduce memory fragmentation and speeds up memory allocation.
+
+Key Differences in Memory Pool Usage:
+
+Feature               Array	                            Linked List
+
+Memory Allocation	    Pre-allocated (fixed size)	      Allocated dynamically
+Memory Usage	        Can waste memory	                Uses memory efficiently
+Access Speed	        Fast (direct indexing)	          Slower (must traverse nodes)
+Fragmentation	        No fragmentation	                Can have memory fragmentation
+Resizing	            Needs reallocation	              Easy to add/remove nodes
+
+Stack vs. Heap Memory
+Feature	                 Stack Memory	                       Heap Memory
+Storage	                Stores function calls & local 
+                        variables	                          Stores objects & dynamic data
+Speed	                  Faster	                            Slower
+Size	                  Small	                               Large
+Lifetime	              Auto-deallocated after function
+                        execution	                          Exists until manually 
+                                                            freed or garbage collected
+
+Binary recursion is when a function calls itself twice in each step.
+
+
+Linear Data Structures: Elements are arranged sequentially, and you can access them in order.
+Examples: Array, Linked List.
+Non-Linear Data Structures: Elements are not arranged in sequence.
+Examples: Tree, Graph.
+
+A garbage collector automatically frees memory that is no longer in use. In languages like JavaScript,
+it tracks which objects are no longer referenced and removes them to prevent memory leaks.
+
+Disadvantages of Recursion (Pros too)
+Disadvantages:   
+Memory Usage: Recursive calls consume memory for each call (stack memory). Too deep recursion can lead to a stack overflow.
+Efficiency: Recursive solutions may be slower due to overhead from function calls.
+Advantages:
+Simplicity: Recursion is often simpler to write for problems like tree traversal and factorial.
+Elegance: It can lead to more elegant and readable code for certain types of problems
+
+Virtual Memory Relation with Data Structures
+Large Data Handling → Stores big arrays, trees, graphs beyond RAM capacity.
+Efficient Process Execution → Supports multi-tasking by swapping inactive data.
+Paging & Linked Lists → OS uses page tables (like linked lists) to track memory pages.
+Virtual Addressing → Data structures in programs use virtual addresses instead of direct RAM addresses.
+
+What is a Hierarchical Data Structure?
+A tree-like structure where elements are arranged in levels.
+Each element (node) has a parent-child relationship (except the root).
+Used for efficient searching, sorting, and organizing data.
+eg:tree,Graph
+
+Space Complexity
+Measures how much memory an algorithm uses.
+O(1) (Constant space): Just a few variables.
+O(n) (Linear space): Uses extra space proportional to input size.
+
+What is Stack Overflow?
+Happens when too many function calls fill up the memory stack.
+Common in deep recursion without a base case.
+
+Big O Notation describes how an algorithm’s time or space grows as input increases.
+
+Why Do We Use Recursion?
+Simplifies Complex Problems – Breaks problems into smaller, manageable subproblems (e.g., tree traversal).
+Reduces Code Length – Eliminates loops and makes code more readable (e.g., factorial calculation).
+Best for Hierarchical Structures – Used in trees, graphs, and nested problems (e.g., directory traversal).
+
+ASCII (American Standard Code for Information Interchange) is a character encoding standard that assigns a unique numerical 
+value (from 0 to 127 in the standard ASCII set) to each character, including letters, digits, punctuation marks, and control characters.
+
+UTF-8 is a character encoding standard that supports all  languages,emoji and special characters.
+
+\t (Tab Character)	Represents a tab space (ASCII value 9).
+
+
+
+Feature       	Traditional Arrays (C, Java, etc.)	                JavaScript Arrays
+
+Size           	Fixed (must declare size at creation)	              Dynamic (can grow/shrink)
+Data Type	      Stores only one type (e.g., int[], char[])	        Can store mixed types (numbers, strings, objects)
+Indexing        Uses zero-based indexing	                          Uses zero-based indexing
+Performance	    Faster (stores data in continuous memory)	          Slower (stores data as objects with extra features)
+Operations	    Basic (insert, delete, search)	                    Advanced (push, pop, slice, filter, map, etc.)
+
+Contiguous vs Non-Contiguous Memory in DSA
+
+Type	                    Contiguous Memory 📏	                                Non-Contiguous Memory 🔗
+
+Definition	              Data is stored in continuous memory blocks.	          Data is stored in scattered memory locations, linked together.
+Example	                  Arrays	                                              Linked Lists, Trees, Graphs
+Memory Allocation	        Allocated as a single block	                          Allocated dynamically in different places
+Access                    Speed	Faster (direct access via index O(1)) ⚡	      Slower (requires traversal O(n)) 🐢
+Insertion/Deletion	      Expensive (requires shifting) ❌	                    Efficient (only pointers change) ✅
+Memory Efficiency	        May waste space if extra slots exist ❌	            Uses only required memory ✅
+
+
+Applications of DLL
+
+Music & Video Playlists   You can go next and previous in a media playlist.
+Navigating File Systems   In file explorers, you can move between previous and next directories.
+Task Scheduling (OS)      Operating systems use DLLs to manage active processes efficiently.
+Undo/Redo Feature         In text editors (like MS Word), every action is stored in a linked list to enable undo and redo.
+
+Applications of LL
+
+Music & Video Playlists   You can move forward to the next song or video, but not backward.
+Dynamic Memory Allocation Used in memory management where memory is allocated dynamically (e.g., linked list-based heap memory management).
+
